@@ -26,7 +26,8 @@
 </template>
 
 <script setup>
-import { updateTodos, state } from "../assets/js/todoUtility";
+import { updateTodos, loadTodos, state } from "../assets/js/todoUtility";
+import { onMounted } from "vue";
 
 const addTodo = () => {
   if (state.newTodo.trim() !== "") {
@@ -40,4 +41,5 @@ const addTodo = () => {
   }
   updateTodos();
 };
+onMounted(loadTodos);
 </script>

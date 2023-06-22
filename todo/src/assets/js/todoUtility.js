@@ -7,7 +7,7 @@ export const state = reactive({
     editingTodoId: null,
 });
 
-const loadTodos = () => {
+export const loadTodos = () => {
     if (localStorage.getItem("todos")) {
         state.todos = JSON.parse(localStorage.getItem("todos"));
     }
