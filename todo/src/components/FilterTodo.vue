@@ -40,7 +40,10 @@
         @blur="finishEditing(todo.id)"
         @keyup.enter="finishEditing(todo.id)"
         @keyup.esc="OnEscapeKey(todo.id)"
-        :class="{ editing: todo.id === state.editingTodoId }"
+        :class="{
+          editing: todo.id === state.editingTodoId,
+          'line-through': todo.completed,
+        }"
       />
       <button class="trash-btn" @click="deleteTodoById(todo.id)">
         <svg
